@@ -1,7 +1,6 @@
 #ifndef VAR_HPP
 #define VAR_HPP
 
-#include <iostream>
 #include <vector>
 #include <utility>
 #include <string>

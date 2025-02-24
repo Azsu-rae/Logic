@@ -1,12 +1,9 @@
 #ifndef LOGIC_HPP
 #define LOGIC_HPP
 
-#include <iostream>
 #include <vector>
-#include <stack>
 #include <utility>
 #include <string>
-#include <unordered_map>
 
 #include "Var.hpp"
 
