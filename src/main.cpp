@@ -1,4 +1,5 @@
 #include "../include/Logic.hpp"
+#include <iostream>
 
 int main () {
 

@@ -1,5 +1,13 @@
-#include "../include/utilities.hpp"
 #include "../include/Logic.hpp"
+
+int exp(int a, int n) {
+
+	if (!n) {
+		return 1;
+	} else {
+		return a*exp(a, n-1);
+	}
+}
 
 bool Logic::not_(bool p) {
 
