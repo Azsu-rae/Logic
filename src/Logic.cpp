@@ -1,5 +1,15 @@
 #include "../include/Logic.hpp"
 
+#include <iostream>
+#include <stack>
+#include <vector>
+#include <utility>
+#include <string>
+
+#include "../include/Var.hpp"
+
+using namespace std;
+
 int exp(int a, int n) {
 
 	if (!n) {
@@ -78,7 +88,7 @@ Var Logic::createChild() {
 	int n = V.sizeVar();
 	for (int i=0;i<n;i++) {
 		newV.insert(V.get(i)[0]);
-	} 
+	}
 
 	return newV;
 }
@@ -105,7 +115,7 @@ void Logic::truthTable() {
 	int m = V.sizeFormula();
 	for (int i=0;i<m;i++) {
 		inputFormula(oldV.get(n+i));
-	} 
+	}
 }
 
 void Logic::inputFormula(string s) {
@@ -146,7 +156,7 @@ void Logic::inputFormula(string s) {
 				default: 
 					cout << "postfix is messed up!" << endl;
 					cout << c << endl;
-			} 
+			}
 			v.push(f);
 		}
 	}
@@ -166,10 +176,10 @@ string Logic::scratchWork(string op, string var1, string var2) {
 
 	if (lessPrio(op, var1)) {
 		var1 = "("+var1+")";
-	} 
+	}
 	if (lessPrio(op, var2)) {
 		var2 = "("+var2+")";
-	} 
+	}
 
 	return  var1 + op + var2;
 }
@@ -195,10 +205,10 @@ pair<string,int> Logic::createFormula(char op, string var1, string var2) {
 			newFormula = scratchWork("~", var1, var2);
 			prio = 1;
 			break;
-		default: 
+		default:
 			cout << "ERROR" << endl;
 		break;
-	} 
+	}
 
 	return make_pair(newFormula, prio);
 }
@@ -277,7 +287,7 @@ void Logic::printTable() {
 					if (i != pos[p]) {
 						cout << "-";
 					} else {
-						cout << "+";
+                        std::cout << "+";
 						p++;
 					}
 				} 
